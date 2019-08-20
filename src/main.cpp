@@ -64,7 +64,7 @@ void setup()
     }
   }
   Homie.getMqttClient().setKeepAlive(120);
-  Homie_setFirmware("csh_primer", "0.0.13");
+  Homie_setFirmware("csh_primer", "0.0.12");
   Homie_setBrand("Comstock Homecontrol");
   Homie.setup();
 }
