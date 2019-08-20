@@ -9,7 +9,8 @@ const char* config = "{ \
     \"password\": \"YOUR_WIFI_PW\" \
   }, \
   \"mqtt\": { \
-    \"host\": \"YOUR_MQTT_SERVER\" \
+    \"host\": \"YOUR_MQTT_SERVER\", \
+    \"base_topic\": \"csh/\" \
   }, \
   \"ota\": { \
     \"enabled\": true \
