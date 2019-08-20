@@ -6,10 +6,11 @@ const char* config = "{ \
   \"name\": \"CSH Primer\", \
   \"wifi\": { \
     \"ssid\": \"YOUR_SSID\", \
-    \"password\": \"YOUR_WIFI_PW\" \
+    \"password\": \"YOUR_WIFIPW\" \
   }, \
   \"mqtt\": { \
-    \"host\": \"YOUR_MQTT_SERVER\" \
+    \"host\": \"YOUR_MQTT_SERVER_IP\", \
+    \"base_topic\": \"csh/\" \
   }, \
   \"ota\": { \
     \"enabled\": true \
@@ -18,7 +19,7 @@ const char* config = "{ \
   } \
 }";
 
-boolean OVERWRITECONFIG = true;
+boolean OVERWRITECONFIG = false;
 
 void writeconf(){
   SPIFFS.remove(CONFIGFILE);
@@ -64,7 +65,7 @@ void setup()
     }
   }
   Homie.getMqttClient().setKeepAlive(120);
-  Homie_setFirmware("csh_primer", "0.0.12");
+  Homie_setFirmware("csh_primer", "1.0.0");
   Homie_setBrand("Comstock Homecontrol");
   Homie.setup();
 }
